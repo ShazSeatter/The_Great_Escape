@@ -9,7 +9,27 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
+    public float runSpeed = 8f;
     Vector2 moveInput;
+
+
+    public float CurrentMoveSpeed { get
+        {
+            if(IsMoving)
+            {
+                if(IsRunning)
+                {
+                    return runSpeed;
+                } else
+                {
+                    return walkSpeed;
+                }
+            } else
+            {
+                // idle speed is 0
+                return 0;
+            }
+        } }
 
     [SerializeField]
     private bool _isMoving = false;
@@ -64,7 +84,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // creating a new vector object and assigning it to rb.velocity. takes 2 inputs, which is x and y) 
-        rb.velocity = new Vector2(moveInput.x * walkSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
     }
 
     // function that makes the character move set to true or false
