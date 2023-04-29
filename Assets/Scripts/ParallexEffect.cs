@@ -16,8 +16,10 @@ public class ParallexEffect : MonoBehaviour
     // Distance that the camera has moved from the starting position of the parallax object
     Vector2 camMoveSinceStart => (Vector2)cam.transform.transform.position - startingPosition;
 
+
     float zDistanceFromTarget => transform.position.z - followTarget.transform.position.z;
 
+    // If object is in front of target, use near clip plane, if behind target, use farclip plane
     float clippingPlane => (cam.transform.position.z + (zDistanceFromTarget > 0 ? cam.farClipPlane : cam.nearClipPlane));
 
 

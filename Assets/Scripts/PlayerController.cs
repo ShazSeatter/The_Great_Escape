@@ -11,14 +11,42 @@ public class PlayerController : MonoBehaviour
     public float walkSpeed = 5f;
     Vector2 moveInput;
 
+    [SerializeField]
+    private bool _isMoving = false;
+
     // getters and setters
-    public bool IsMoving { get; private set; }
+    public bool IsMoving { get {
+            return _isMoving;
+        } private set {
+            _isMoving = value;
+            animator.SetBool("IsMoving", value);
+        } }
+
+    [SerializeField]
+    private bool _isRunning = false;
+
+    // this is a property
+    public bool IsRunning
+    {
+        get
+        {
+            return _isRunning;
+        }
+        set
+        {
+            _isRunning = value;
+            animator.SetBool("IsRunning", value);
+        }
+    }
 
     Rigidbody2D rb;
+
+    Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -39,11 +67,24 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveInput.x * walkSpeed, rb.velocity.y);
     }
 
+    // function that makes the character move set to true or false
+
     public void OnMove(InputAction.CallbackContext context)
     {
         // vector x y movement 
         moveInput = context.ReadValue<Vector2>();
 
         IsMoving = moveInput != Vector2.zero;
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            IsRunning = true;
+        } else if(context.canceled)
+        {
+            IsRunning = false;
+        }
     }
 }
