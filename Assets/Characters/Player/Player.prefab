@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6494558156102003152}
   - component: {fileID: 2608417615339791358}
   - component: {fileID: 7276461808262502241}
+  - component: {fileID: 5599047762669138024}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -124,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   runSpeed: 8
+  jumpImpulse: 6
+  airWalkSpeed: 3
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -173,7 +176,19 @@ MonoBehaviour:
     m_ActionId: 1a906ef5-84e8-44a2-824e-14842ddfe2fa
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4090495593216537295}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0b677582-228f-432d-bffe-7af21d5c408c
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -232,6 +247,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4c96adee-294c-4975-adb5-212f3b3d7ce0
     m_ActionName: Player/Run[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4090495593216537295}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ba4e498-5b40-4d34-a9e2-aacdba88ba61
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -274,3 +305,35 @@ CapsuleCollider2D:
   m_Offset: {x: 0.020495772, y: -0.28752697}
   m_Size: {x: 0.5698378, y: 1.4864912}
   m_Direction: 0
+--- !u!114 &5599047762669138024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722136875749644145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a166db5d13479fa9ace159db4430b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 1
+  _isOnWall: 1
+  _isOnCeiling: 1
