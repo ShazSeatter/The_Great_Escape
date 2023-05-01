@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectedColliders: []
+  col: {fileID: 0}
 --- !u!1 &2982007858119619681
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +88,7 @@ GameObject:
   - component: {fileID: 4883033123675441016}
   - component: {fileID: 2668270711093874503}
   - component: {fileID: 1028240414217068987}
+  - component: {fileID: 9066290954600318663}
   m_Layer: 8
   m_Name: SpiderEnemy
   m_TagString: Untagged
@@ -212,9 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 3
+  walkStopRate: 0.05
   attackZone: {fileID: 8093309275360419297}
-  webPrefab: {fileID: 3020632325999915505, guid: d83dc28b26265458082ec9498b2ebcfd, type: 3}
-  spiderHead: {fileID: 0}
   _hasTarget: 0
 --- !u!114 &2668270711093874503
 MonoBehaviour:
@@ -269,3 +270,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9066290954600318663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2982007858119619681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d46ef4632644f49abea9c7adcbc4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100

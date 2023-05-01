@@ -114,6 +114,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool IsAlive
+    {
+        get
+        {
+            return animator.GetBool("IsAlive");
+        }
+    }
+
     Rigidbody2D rb;
 
     Animator animator;
@@ -150,11 +158,17 @@ public class PlayerController : MonoBehaviour
     {
         // vector x y movement 
         moveInput = context.ReadValue<Vector2>();
+        if(IsAlive)
+        {
+            IsMoving = moveInput != Vector2.zero;
 
-        IsMoving = moveInput != Vector2.zero;
+            // facing the direction the character is moving in
+            SetFacingDirection(moveInput);
+        } else
+        {
+            IsMoving = false;
+        }
 
-        // facing the direction the character is moving in
-        SetFacingDirection(moveInput);
     }
 
     private void SetFacingDirection(Vector2 moveInput)

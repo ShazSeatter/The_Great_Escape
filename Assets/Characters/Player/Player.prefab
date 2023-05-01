@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2608417615339791358}
   - component: {fileID: 7276461808262502241}
   - component: {fileID: 5599047762669138024}
+  - component: {fileID: 5985366547867925141}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -127,8 +128,6 @@ MonoBehaviour:
   runSpeed: 8
   jumpImpulse: 6
   airWalkSpeed: 3
-  gravityScale: 1
-  fallingGravityScale: 5
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1
@@ -339,3 +338,15 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 1
   _isOnCeiling: 1
+--- !u!114 &5985366547867925141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722136875749644145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d46ef4632644f49abea9c7adcbc4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
