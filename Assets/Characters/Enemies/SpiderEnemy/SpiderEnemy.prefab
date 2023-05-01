@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 4416927645929220481}
   - component: {fileID: 8120118104823457990}
   - component: {fileID: 4883033123675441016}
-  m_Layer: 0
+  - component: {fileID: 2668270711093874503}
+  - component: {fileID: 1028240414217068987}
+  m_Layer: 8
   m_Name: SpiderEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,3 +138,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b63997dedcbc46b09cf0ffb9b488d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSpeed: 3
+--- !u!114 &2668270711093874503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2982007858119619681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a166db5d13479fa9ace159db4430b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 1
+  _isOnWall: 1
+  _isOnCeiling: 1
+--- !u!95 &1028240414217068987
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2982007858119619681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 848ffafaf48bd4554bf5fd97438fe1c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
