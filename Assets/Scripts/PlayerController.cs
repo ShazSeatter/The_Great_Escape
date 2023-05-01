@@ -23,33 +23,44 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public float CurrentMoveSpeed { get
+    public float CurrentMoveSpeed
+    {
+        get
         {
-            if (IsMoving && !touchingDirections.IsOnWall)
+            if (CanMove)
             {
-                if (touchingDirections.IsGrounded)
+                if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        // Air move
+                        return airWalkSpeed;
                     }
                 }
                 else
                 {
-                    // Air move
-                    return airWalkSpeed;
+                    // idle speed is 0
+                    return 0;
                 }
             }
             else
             {
-                // idle speed is 0
+                // Movement locked
                 return 0;
             }
-        } }
+        }
+    }
 
     [SerializeField]
     private bool _isMoving = false;
@@ -94,6 +105,12 @@ public class PlayerController : MonoBehaviour
                 transform.localScale *= new Vector2(-1, 1); 
             }
             _isFacingRight = value;
+        }
+    }
+
+    public bool CanMove { get
+        {
+            return animator.GetBool("canMove");
         }
     }
 
@@ -165,7 +182,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         // TODO check if alive as well
-        if(context.started && touchingDirections.IsGrounded)
+        if(context.started && touchingDirections.IsGrounded && CanMove)
         {
             animator.SetTrigger("jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
