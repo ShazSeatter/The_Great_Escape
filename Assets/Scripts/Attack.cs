@@ -22,8 +22,9 @@ public class Attack : MonoBehaviour
 
         if(damageable != null)
         {
+            Vector2 deliverKnockback = transform.parent.localScale.x > 0 ? knockBack : new Vector2(-knockBack.x, knockBack.y);
             // Hit the target
-            bool gotHit = damageable.Hit(attackDamage, knockBack);
+            bool gotHit = damageable.Hit(attackDamage, deliverKnockback);
 
             if(gotHit)
                 Debug.Log(collision.name + "hit for " + attackDamage); 
