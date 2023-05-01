@@ -56,7 +56,7 @@ public class Damageable : MonoBehaviour
 
     private float timeSinceHit = 0;
 
-    public float invincibilityTime = 0.25f;
+    public float invincibilityTime = 1f;
 
     public bool IsAlive
     {
@@ -68,6 +68,18 @@ public class Damageable : MonoBehaviour
             _isAlive = value;
             animator.SetBool("IsAlive", value);
             Debug.Log("IsAlive set " + value);
+        }
+    }
+
+    public bool LockVelocity
+    {
+        get
+        {
+            return animator.GetBool("lockVelocity");
+        }
+        set
+        {
+            animator.SetBool("lockVelocity", value);
         }
     }
 
@@ -103,6 +115,7 @@ public class Damageable : MonoBehaviour
 
             // Notify other subscribed components that the damageable was hit to handle the knockback, etc..
             animator.SetTrigger("hit");
+            LockVelocity = true;
             damageableHit.Invoke(damage, knockBack);
 
             return true; 

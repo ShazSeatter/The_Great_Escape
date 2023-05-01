@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class Spider : MonoBehaviour
 {
     public float walkSpeed = 3f;
     public float walkStopRate = 0.05f;
     public DetectionZone attackZone;
+
+    Damageable damageable;
 
     Rigidbody2D rb;
 
@@ -76,6 +78,7 @@ public class Spider : MonoBehaviour
         // using script from before to incorporate methods for wall check, this then needs to be added to Prefab as well
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
+        damageable = GetComponent<Damageable>();
     }
 
     // Update is called once per frame
@@ -94,11 +97,16 @@ public class Spider : MonoBehaviour
         {
             FlipDirection();
         }
-        if (CanMove)
-        { rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y); }
+
+        if (!damageable.LockVelocity)
+        {
+            if (CanMove)
+            { rb.velocity = new Vector2(walkSpeed * walkDirectionVector.x, rb.velocity.y); }
             
-        else
-        { rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y); }
+            else
+            { rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y); }
+        }
+
            
         
         
@@ -116,6 +124,11 @@ public class Spider : MonoBehaviour
         {
             Debug.LogError("Current walkable direction is not set to legal values of right or left");
         }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 
     //public void StopAttack()

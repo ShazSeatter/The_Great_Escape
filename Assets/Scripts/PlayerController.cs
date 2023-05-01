@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 // the : means inherited from something in this case MonoBehaviour (like extends in java)
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damageable))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 moveInput;
     TouchingDirections touchingDirections;
+    Damageable damageable;
 
 
 
@@ -123,11 +124,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool LockVelocity { get
-        {
-            return animator.GetBool("lockVelocity");
-        }
-            }
+    
 
     Rigidbody2D rb;
 
@@ -138,6 +135,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damageable = GetComponent<Damageable>();
     }
 
     // Start is called before the first frame update
@@ -154,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!LockVelocity)
+        if(!damageable.LockVelocity)
         // creating a new vector object and assigning it to rb.velocity. takes 2 inputs, which is x and y) 
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
 
