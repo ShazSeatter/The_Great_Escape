@@ -16304,6 +16304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4722136875749644145, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7276461808262502241, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
       propertyPath: m_Size.y
       value: 1.4379017
@@ -16321,9 +16325,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1377872227163084337, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377872227163084337, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 2982007858119619681, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
       propertyPath: m_Name
       value: SpiderEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982007858119619681, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883033123675441016, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
+      propertyPath: webPrefab
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883033123675441016, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
+      propertyPath: spiderHead
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8115532778285140626, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
       propertyPath: m_RootOrder
@@ -16331,11 +16355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8115532778285140626, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.64
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 8115532778285140626, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.51
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 8115532778285140626, guid: 526dc9b9014e14cc8aace565403e80b1, type: 3}
       propertyPath: m_LocalPosition.z

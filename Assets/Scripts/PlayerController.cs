@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float airWalkSpeed = 3f;
 
     //public float gravityScale = 1f;
-    //public float fallingGravityScale = 3f;
+    //public float fallingGravityScale = 10f;
 
 
     Vector2 moveInput;
@@ -153,6 +153,7 @@ public class PlayerController : MonoBehaviour
 
         IsMoving = moveInput != Vector2.zero;
 
+        // facing the direction the character is moving in
         SetFacingDirection(moveInput);
     }
 
@@ -182,12 +183,16 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         // TODO check if alive as well
-        if(context.started && touchingDirections.IsGrounded && CanMove)
+        if (context.started && touchingDirections.IsGrounded && CanMove)
         {
             animator.SetTrigger("jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            //    rb.gravityScale = gravityScale;
+            //} else if(!touchingDirections.IsGrounded && rb.velocity.y < 0)
+            //{
+            //    rb.gravityScale = fallingGravityScale;
+            //}
         }
-       
     }
 
     public void OnAttack(InputAction.CallbackContext context)
