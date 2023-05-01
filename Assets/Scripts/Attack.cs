@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
     Collider2D attackCollider;
 
     public int attackDamage = 10;
+    public Vector2 knockBack = Vector2.zero;
 
     private void Awake()
     {
@@ -22,13 +23,10 @@ public class Attack : MonoBehaviour
         if(damageable != null)
         {
             // Hit the target
-            bool gotHit = damageable.Hit(attackDamage);
+            bool gotHit = damageable.Hit(attackDamage, knockBack);
 
             if(gotHit)
-            {
-                Debug.Log(collision.name + "hit for " + attackDamage);
-            }
-            
+                Debug.Log(collision.name + "hit for " + attackDamage); 
         }
     }
 }

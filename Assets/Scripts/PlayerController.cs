@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
 
 
+
     public float CurrentMoveSpeed
     {
         get
@@ -122,6 +123,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool LockVelocity { get
+        {
+            return animator.GetBool("lockVelocity");
+        }
+            }
+
     Rigidbody2D rb;
 
     Animator animator;
@@ -147,9 +154,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(!LockVelocity)
         // creating a new vector object and assigning it to rb.velocity. takes 2 inputs, which is x and y) 
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+
         animator.SetFloat("yVelocity", rb.velocity.y);
+
     }
 
     // function that makes the character move set to true or false
@@ -215,6 +225,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("attack");
         }
+    }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 }
 
