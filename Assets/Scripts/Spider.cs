@@ -8,6 +8,7 @@ public class Spider : MonoBehaviour
     public float walkSpeed = 3f;
     public float walkStopRate = 0.05f;
     public DetectionZone attackZone;
+    public DetectionZone cliffDetectionZone;
 
     Damageable damageable;
 
@@ -28,27 +29,36 @@ public class Spider : MonoBehaviour
     public enum WalkableDirection {  Right, Left};
 
     private WalkableDirection _walkDirection;
+    
     private Vector2 walkDirectionVector = Vector2.right;
+  
 
     public WalkableDirection WalkDirection
     {
         get { return _walkDirection; }
-        set {
-            if(_walkDirection != value)
+        set
+        {
+            if (_walkDirection != value)
             {
-                //Direction flipped
+                //Direction flipped - allows the object to be flipped to walk the other way
                 gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
+                
 
-                if(value == WalkableDirection.Right)
+                if (value == WalkableDirection.Right)
                 {
                     walkDirectionVector = Vector2.right;
 
-                } else if (value == WalkableDirection.Left)
+                }
+                else if (value == WalkableDirection.Left)
                 {
                     walkDirectionVector = Vector2.left;
                 }
+
             }
-            _walkDirection = value; }
+
+            Debug.Log(value);
+            _walkDirection = value;
+        }
     }
 
     // setting the inital value
@@ -71,6 +81,15 @@ public class Spider : MonoBehaviour
         }
     }
 
+    public float AttackCooldown { get
+        {
+            return animator.GetFloat("attackCooldown");
+        } private set
+        {
+            animator.SetFloat("attackCooldown", Mathf.Max(value, 0));
+        }
+            }
+
     private void Awake()
     {
         // these are to make reference to the components 
@@ -85,7 +104,12 @@ public class Spider : MonoBehaviour
     void Update()
     {
         HasTarget = attackZone.detectedColliders.Count > 0;
-
+        // using time.deltatime ensures the movement is the same across all computers regardles of the fps being applied
+        if(AttackCooldown > 0)
+        {
+            AttackCooldown -= Time.deltaTime;
+        }
+        
     }
 
     // fixed update is for physics functions
@@ -106,10 +130,7 @@ public class Spider : MonoBehaviour
             else
             { rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x, 0, walkStopRate), rb.velocity.y); }
         }
-
-           
-        
-        
+   
     }
 
     private void FlipDirection()
@@ -131,6 +152,14 @@ public class Spider : MonoBehaviour
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
 
+    // event to be triggered
+    public void OnCliffDetected()
+    {
+        if (touchingDirections.IsGrounded)
+        {
+            FlipDirection();
+        }
+    }
     //public void StopAttack()
     //{
     //    animator.SetBool("attack", false);
