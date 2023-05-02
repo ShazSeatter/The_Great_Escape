@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float airWalkSpeed = 3f;
 
     //public float gravityScale = 1f;
-    //public float fallingGravityScale = 10f;
+    //public float fallingGravityScale = 5f;
 
 
     Vector2 moveInput;
@@ -101,10 +101,10 @@ public class PlayerController : MonoBehaviour
         }
         private set
         {
-            if(_isFacingRight != value)
+            if (_isFacingRight != value)
             {
                 // Flip the local scale to make the player face the opposite direction
-                transform.localScale *= new Vector2(-1, 1); 
+                transform.localScale *= new Vector2(-1, 1);
             }
             _isFacingRight = value;
         }
@@ -124,7 +124,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+    //[SerializeField]
+    //private float _fallingGravityScale = 3f;
+    //public float FallingGravityScale
+    //{
+    //    get { return _fallingGravityScale; }
+    //    set {_fallingGravityScale = value;}
+    //}
+
 
     Rigidbody2D rb;
 
@@ -141,7 +148,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -152,9 +159,9 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!damageable.LockVelocity)
-        // creating a new vector object and assigning it to rb.velocity. takes 2 inputs, which is x and y) 
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        if (!damageable.LockVelocity)
+            // creating a new vector object and assigning it to rb.velocity. takes 2 inputs, which is x and y) 
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
 
         animator.SetFloat("yVelocity", rb.velocity.y);
 
@@ -166,7 +173,7 @@ public class PlayerController : MonoBehaviour
     {
         // vector x y movement 
         moveInput = context.ReadValue<Vector2>();
-        if(IsAlive)
+        if (IsAlive)
         {
             IsMoving = moveInput != Vector2.zero;
 
@@ -181,11 +188,11 @@ public class PlayerController : MonoBehaviour
 
     private void SetFacingDirection(Vector2 moveInput)
     {
-        if(moveInput.x > 0 && !IsFacingRight)
+        if (moveInput.x > 0 && !IsFacingRight)
         {
             // Face the right
             IsFacingRight = true;
-        } else if(moveInput.x < 0 && IsFacingRight) {
+        } else if (moveInput.x < 0 && IsFacingRight) {
             // Face the left
             IsFacingRight = false;
         }
@@ -193,10 +200,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if (context.started)
         {
             IsRunning = true;
-        } else if(context.canceled)
+        } else if (context.canceled)
         {
             IsRunning = false;
         }
@@ -209,10 +216,13 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            //    Debug.Log("gravityscale");
             //    rb.gravityScale = gravityScale;
-            //} else if(!touchingDirections.IsGrounded && rb.velocity.y < 0)
+            //}
+            //else if (!touchingDirections.IsGrounded && rb.velocity.y < 0)
             //{
-            //    rb.gravityScale = fallingGravityScale;
+            //    Debug.Log("Gravity scale set to falling");
+            //    rb.gravityScale = FallingGravityScale;
             //}
         }
     }

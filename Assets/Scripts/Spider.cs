@@ -56,7 +56,7 @@ public class Spider : MonoBehaviour
 
             }
 
-            Debug.Log(value);
+            Debug.Log("WalkDirection set to " + value);
             _walkDirection = value;
         }
     }
@@ -110,6 +110,12 @@ public class Spider : MonoBehaviour
             AttackCooldown -= Time.deltaTime;
         }
         
+    }
+
+    private void Start()
+    {
+        Debug.Log("Start method called");
+        WalkDirection = WalkableDirection.Right;
     }
 
     // fixed update is for physics functions

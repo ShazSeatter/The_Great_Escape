@@ -9,7 +9,7 @@ public class DetectionZone : MonoBehaviour
     public UnityEvent noCollidersRemain;
 
     public List<Collider2D> detectedColliders = new List<Collider2D>();
-    public Collider2D col;
+    Collider2D col;
 
     private void Awake()
     {
