@@ -14,9 +14,6 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 6f;
     public float airWalkSpeed = 3f;
 
-    //public float gravityScale = 1f;
-    //public float fallingGravityScale = 5f;
-
 
     Vector2 moveInput;
     TouchingDirections touchingDirections;
@@ -124,15 +121,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //[SerializeField]
-    //private float _fallingGravityScale = 3f;
-    //public float FallingGravityScale
-    //{
-    //    get { return _fallingGravityScale; }
-    //    set {_fallingGravityScale = value;}
-    //}
-
-
     Rigidbody2D rb;
 
     Animator animator;
@@ -216,15 +204,8 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-            //    Debug.Log("gravityscale");
-            //    rb.gravityScale = gravityScale;
-            //}
-            //else if (!touchingDirections.IsGrounded && rb.velocity.y < 0)
-            //{
-            //    Debug.Log("Gravity scale set to falling");
-            //    rb.gravityScale = FallingGravityScale;
-            //}
-        }
+            }
+
     }
 
     public void OnAttack(InputAction.CallbackContext context)
