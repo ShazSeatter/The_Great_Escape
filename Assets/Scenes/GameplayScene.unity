@@ -16971,6 +16971,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994282502305474090, guid: 84501f80d4cf04211b11b1a7f3a9772e, type: 3}
+      propertyPath: wayPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 307146596}
+    - target: {fileID: 3994282502305474090, guid: 84501f80d4cf04211b11b1a7f3a9772e, type: 3}
+      propertyPath: wayPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 322519447}
+    - target: {fileID: 3994282502305474090, guid: 84501f80d4cf04211b11b1a7f3a9772e, type: 3}
+      propertyPath: wayPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 898127284}
+    - target: {fileID: 3994282502305474090, guid: 84501f80d4cf04211b11b1a7f3a9772e, type: 3}
+      propertyPath: wayPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 2047873791}
+    - target: {fileID: 5530498052182288518, guid: 84501f80d4cf04211b11b1a7f3a9772e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6554522418262733526, guid: 84501f80d4cf04211b11b1a7f3a9772e, type: 3}
       propertyPath: m_Name
       value: MosquitoEnemy

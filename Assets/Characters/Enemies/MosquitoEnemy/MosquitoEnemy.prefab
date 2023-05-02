@@ -46,8 +46,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13521339, y: 0}
-  m_Size: {x: 0.6352132, y: 1}
+  m_Offset: {x: 0.07541985, y: 0}
+  m_Size: {x: 1.0564797, y: 1.0564797}
   m_Direction: 0
 --- !u!114 &4030002095091585235
 MonoBehaviour:
@@ -125,8 +125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059156366, y: -0.17394216}
-  m_Size: {x: 0.88873935, y: 1.0239522}
+  m_Offset: {x: 0.26978907, y: -0.17394216}
+  m_Size: {x: 1.3100047, y: 1.3100047}
   m_Direction: 0
 --- !u!1 &6554522418262733526
 GameObject:
@@ -309,5 +309,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6690cdcec40c48249d9d4ed5b4b6f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flightSpeed: 2
+  wayPointReachedDistance: 0.1
   stabDetectionZone: {fileID: 8312658728274013739}
+  wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _hasTarget: 0
