@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3770754695687053157}
   - component: {fileID: 1983762054926705547}
   - component: {fileID: 6907561301993823780}
+  - component: {fileID: 4872273257290942054}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -97,3 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2490b19843cce443fb9247fe30cae94d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthRestore: 10
+--- !u!58 &4872273257290942054
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6981712387709666618}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.37351656
