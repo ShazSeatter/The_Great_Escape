@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     // implying that instances will be created from these 
     public GameObject damageTextPrefab;
     public GameObject healthTextPrefab;
+    public GameObject fullHealthTextPrefab;
 
     public Canvas gameCanvas;
 
@@ -60,4 +61,6 @@ public class UIManager : MonoBehaviour
         // turning int into a string so string can be assigned to text
         tmpText.text = healthRestored.ToString();
     }
+
+    public void CharacterHasFullHealth(GameObject character) 
 }
