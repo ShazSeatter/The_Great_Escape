@@ -23,12 +23,14 @@ public class UIManager : MonoBehaviour
     {
         CharacterEvents.characterDamaged += CharacterTakesDamage;
         CharacterEvents.characterHealed += CharacterHealed;
+        CharacterEvents.characterFullHealth += CharacterHasFullHealth;
     }
 
     private void OnDisable()
     {
         CharacterEvents.characterDamaged -= CharacterTakesDamage;
         CharacterEvents.characterHealed -= CharacterHealed;
+        CharacterEvents.characterFullHealth -= CharacterHasFullHealth;
     }
 
     public void CharacterTakesDamage(GameObject character, int damageReceived)
@@ -62,5 +64,12 @@ public class UIManager : MonoBehaviour
         tmpText.text = healthRestored.ToString();
     }
 
-    public void CharacterHasFullHealth(GameObject character) 
+    public void CharacterHasFullHealth(GameObject character)
+    {
+        Vector3 spawnPosition = Camera.main.WorldToScreenPoint(character.transform.position);
+
+        // this gives copy of game object 
+        TMP_Text tmpText = Instantiate(fullHealthTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform)
+            .GetComponent<TMP_Text>();
+    }
 }
