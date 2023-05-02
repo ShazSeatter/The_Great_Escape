@@ -129,7 +129,7 @@ public class Damageable : MonoBehaviour
     public void Heal(int healthRestore)
     {
         // when damageable componet gets healed INVOKE event character healed 
-        if(IsAlive && Health < 100)
+        if(IsAlive)
         {
             // get the higher of the 2 values
             // if health is == or greater maxhealth, subtraction will return a negative value, default max heal to 0.

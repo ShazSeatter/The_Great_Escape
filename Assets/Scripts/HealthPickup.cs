@@ -17,7 +17,7 @@ public class HealthPickup : MonoBehaviour
     {
         Damageable damageable = collision.GetComponent<Damageable>();
 
-        if (damageable)
+        if (damageable.Health < 100)
         {
             damageable.Heal(healthRestore);
             // after picking up cookie, it will be removed from game 
