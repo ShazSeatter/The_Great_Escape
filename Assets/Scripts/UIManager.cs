@@ -11,6 +11,25 @@ public class UIManager : MonoBehaviour
 
     public Canvas gameCanvas;
 
+    private void Awake()
+    {
+        // look into root of the scene at game level and find the first object that is of type canvas 
+        gameCanvas = FindObjectOfType<Canvas>();
+
+    }
+
+    private void OnEnable()
+    {
+        CharacterEvents.characterDamaged += CharacterTakesDamage;
+        CharacterEvents.characterHealed += CharacterHealed;
+    }
+
+    private void OnDisable()
+    {
+        CharacterEvents.characterDamaged -= CharacterTakesDamage;
+        CharacterEvents.characterHealed -= CharacterHealed;
+    }
+
     public void CharacterTakesDamage(GameObject character, int damageReceived)
     {
         // Creating text where character is hit

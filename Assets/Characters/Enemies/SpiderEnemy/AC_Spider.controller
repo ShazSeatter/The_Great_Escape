@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a49e7ad597d41a493b45dd53ea74db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatName: 
+  floatName: attackCooldown
   updateOnStateEnter: 0
   updateOnStateExit: 1
   updateOnStateMachineEnter: 0
@@ -97,7 +97,7 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours:
   - {fileID: -6111053567613601712}
-  - {fileID: -2344542617532632814}
+  - {fileID: -3043920591353736538}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -231,6 +231,19 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!114 &-3043920591353736538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96402281a9424702a7464c6c405df4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 1.5
 --- !u!114 &-2344542617532632814
 MonoBehaviour:
   m_ObjectHideFlags: 1
