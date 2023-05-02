@@ -57,7 +57,6 @@ public class Spider : MonoBehaviour
 
             }
 
-            Debug.Log("WalkDirection set to " + value);
             _walkDirection = value;
         }
     }

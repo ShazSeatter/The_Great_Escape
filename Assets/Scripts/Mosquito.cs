@@ -10,6 +10,7 @@ public class Mosquito : MonoBehaviour
     public DetectionZone stabDetectionZone;
     public List<Transform> wayPoints;
 
+
     Animator animator;
 
     Rigidbody2D rb;
@@ -99,11 +100,11 @@ public class Mosquito : MonoBehaviour
         ChangeDirection();
 
         // See if we need to switch waypoints
-        if(distance <= wayPointReachedDistance)
+        if (distance <= wayPointReachedDistance)
         {
             wayPointNum++;
 
-            if(wayPointNum >= wayPoints.Count)
+            if (wayPointNum >= wayPoints.Count)
             {
                 // loop back to original waypoint 
                 wayPointNum = 0;
@@ -111,21 +112,22 @@ public class Mosquito : MonoBehaviour
 
             nextWayPoint = wayPoints[wayPointNum];
         }
-        
+
     }
 
     private void ChangeDirection()
     {
         Vector3 locScale = transform.localScale;
-        if(transform.localScale.x > 0)
+        if (transform.localScale.x > 0)
         {
             // facing right
-            if(rb.velocity.x < 0)
+            if (rb.velocity.x < 0)
             {
                 //flip
                 transform.localScale = new Vector3(-1 * locScale.x, locScale.y, locScale.z);
             }
-        } else
+        }
+        else
         {
             // facing left
             if (rb.velocity.x > 0)

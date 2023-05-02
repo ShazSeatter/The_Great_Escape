@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6474f7583eb43c18b6bb8948bb0a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
-  knockBack: {x: 0, y: 0}
+  attackDamage: 15
+  knockBack: {x: 4, y: 2}
 --- !u!1 &2454143668006005509
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2454143668006005509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.72, y: -1.48, z: 0}
+  m_LocalPosition: {x: 1.41, y: -1.59, z: 0}
   m_LocalScale: {x: 2.0239823, y: 1.8782502, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,8 +125,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.43528658, y: -0.00844437}
-  m_Size: {x: 0.9188272, y: 1.1896421}
+  m_Offset: {x: 0.47927335, y: 0.24689475}
+  m_Size: {x: 1.0068009, y: 1.1303216}
   m_Direction: 0
 --- !u!1 &6554522418262733526
 GameObject:
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6690cdcec40c48249d9d4ed5b4b6f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flightSpeed: 2
+  flightSpeed: 3.5
   wayPointReachedDistance: 0.1
   stabDetectionZone: {fileID: 8312658728274013739}
   wayPoints:
