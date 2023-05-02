@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 1.5
+  fadeDelay: 1
 --- !u!114 &-2344542617532632814
 MonoBehaviour:
   m_ObjectHideFlags: 1

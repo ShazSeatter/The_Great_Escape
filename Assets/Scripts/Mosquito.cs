@@ -68,16 +68,24 @@ public class Mosquito : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(damageable.IsAlive)
+        if (damageable.IsAlive)
         {
-            if(CanMove)
+            if (CanMove)
             {
                 Flight();
-            } else
+            }
+            else
             {
                 rb.velocity = Vector3.zero;
             }
         }
+        else
+        {
+            // when dead, falls to the ground
+            rb.gravityScale = 2f;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
     }
 
     private void Flight()
@@ -88,6 +96,7 @@ public class Mosquito : MonoBehaviour
         // Check if we have reached waypoint already
         float distance = Vector2.Distance(nextWayPoint.position, transform.position);
         rb.velocity = directionToWayPoint * flightSpeed;
+        ChangeDirection();
 
         // See if we need to switch waypoints
         if(distance <= wayPointReachedDistance)
@@ -103,5 +112,27 @@ public class Mosquito : MonoBehaviour
             nextWayPoint = wayPoints[wayPointNum];
         }
         
+    }
+
+    private void ChangeDirection()
+    {
+        Vector3 locScale = transform.localScale;
+        if(transform.localScale.x > 0)
+        {
+            // facing right
+            if(rb.velocity.x < 0)
+            {
+                //flip
+                transform.localScale = new Vector3(-1 * locScale.x, locScale.y, locScale.z);
+            }
+        } else
+        {
+            // facing left
+            if (rb.velocity.x > 0)
+            {
+                //flip
+                transform.localScale = new Vector3(-1 * locScale.x, locScale.y, locScale.z);
+            }
+        }
     }
 }
