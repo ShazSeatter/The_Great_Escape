@@ -48,6 +48,19 @@ public class Mosquito : MonoBehaviour
     }
 
 
+    public float AttackCooldown
+    {
+        get
+        {
+            return animator.GetFloat("attackCooldown");
+        }
+        private set
+        {
+            animator.SetFloat("attackCooldown", Mathf.Max(value, 0));
+        }
+    }
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -65,6 +78,7 @@ public class Mosquito : MonoBehaviour
     {
         // checking to see if there is any collideres detected if there is there is a target
         HasTarget = stabDetectionZone.detectedColliders.Count > 0;
+        AttackCooldown -= Time.deltaTime;
     }
 
     private void FixedUpdate()

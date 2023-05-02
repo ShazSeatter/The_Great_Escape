@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 15
-  knockBack: {x: 4, y: 2}
+  knockBack: {x: 0, y: 0}
 --- !u!1 &2454143668006005509
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,8 +158,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6554522418262733526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.49407545, y: 0.5324104, z: 1}
+  m_LocalPosition: {x: 8.3, y: 3.97, z: -0.15435134}
+  m_LocalScale: {x: 0.36, y: 0.39, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2256591748896391702}
@@ -253,8 +253,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4185537, y: -0.26473126}
-  m_Size: {x: 2.7841747, y: 3.8087127}
+  m_Offset: {x: -0.32903022, y: -0.26473173}
+  m_Size: {x: 2.8144662, y: 3.3198376}
   m_Direction: 0
 --- !u!114 &1030859164221766677
 MonoBehaviour:
@@ -271,11 +271,11 @@ MonoBehaviour:
   damageableHit:
     m_PersistentCalls:
       m_Calls: []
-  _maxHealth: 100
-  _health: 100
+  _maxHealth: 50
+  _health: 50
   _isAlive: 1
   isInvincible: 0
-  invincibilityTime: 1
+  invincibilityTime: 0.5
 --- !u!95 &5067024097131025873
 Animator:
   serializedVersion: 5
