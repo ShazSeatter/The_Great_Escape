@@ -6,6 +6,7 @@ public class HealthPickup : MonoBehaviour
 {
     public int healthRestore = 10;
 
+    public Vector3 spinRotationSpeed = new Vector3(0, 180, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,10 @@ public class HealthPickup : MonoBehaviour
         {
             CharacterEvents.characterFullHealth.Invoke(gameObject);
         }
+    }
+
+    public void Update()
+    {
+        transform.eulerAngles += spinRotationSpeed * Time.deltaTime;
     }
 }

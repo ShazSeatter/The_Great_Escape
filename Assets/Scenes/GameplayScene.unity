@@ -16747,13 +16747,9 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5099318372004446974, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
-      propertyPath: knockBack.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5099318372004446974, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
-      propertyPath: knockBack.y
-      value: 3
+    - target: {fileID: 5932876192553831895, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7276461808262502241, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
       propertyPath: m_Size.y
