@@ -22,6 +22,9 @@ public class HealthPickup : MonoBehaviour
             damageable.Heal(healthRestore);
             // after picking up cookie, it will be removed from game 
             Destroy(gameObject);
+        } else
+        {
+            CharacterEvents.characterFullHealth.Invoke(gameObject);
         }
     }
 }
