@@ -220,5 +220,14 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            damageable.IsAlive = false;
+        }
+    }
 }
 
