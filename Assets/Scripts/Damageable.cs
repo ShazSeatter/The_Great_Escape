@@ -138,7 +138,7 @@ public class Damageable : MonoBehaviour
             Health += healthRestore;
 
             // UI manager to create healing text 
-            CharacterEvents.characterHealed.Invoke(gameObject, healthRestore);
+            CharacterEvents.characterHealed(gameObject, healthRestore);
 
         }
     }
