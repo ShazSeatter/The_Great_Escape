@@ -38,16 +38,16 @@ public class HealthBar : MonoBehaviour
         playerDamageable.healthChanged.RemoveListener(OnPlayerHealthChanged);
     }
 
-    public void SetMaxHealth(int health)
-    {
-        slider.maxValue = health;
-        slider.value = health;
-    }
+    //public void SetMaxHealth(int health)
+    //{
+    //    slider.maxValue = health;
+    //    slider.value = health;
+    //}
 
-    public void SetHealth(int health)
-    {
-        slider.value = health;
-    }
+    //public void SetHealth(int health)
+    //{
+    //    slider.value = health;
+    //}
 
     private float CalculateSliderPercentage(int currentHealth, int maxHealth)
     {
