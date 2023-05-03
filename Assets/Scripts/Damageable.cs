@@ -37,7 +37,7 @@ public class Damageable : MonoBehaviour
         } set
         {
             _health = value;
-            healthChanged?.Invoke(_health, MaxHealth);
+            healthChanged.Invoke(_health, MaxHealth);
 
             // If health drops below 0, character is no longer alive
             if(_health <= 0)

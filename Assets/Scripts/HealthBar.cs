@@ -49,7 +49,7 @@ public class HealthBar : MonoBehaviour
     //    slider.value = health;
     //}
 
-    private float CalculateSliderPercentage(int currentHealth, int maxHealth)
+    private float CalculateSliderPercentage(float currentHealth, float maxHealth)
     {
         return currentHealth / maxHealth;
     }
