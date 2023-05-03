@@ -131,15 +131,13 @@ public class Damageable : MonoBehaviour
         // when damageable componet gets healed INVOKE event character healed 
         if(IsAlive)
         {
-            // get the higher of the 2 values
-            // if health is == or greater maxhealth, subtraction will return a negative value, default max heal to 0.
-            //int maxHeal = Mathf.Max(MaxHealth - Health, 0);
-            //int actualHeal = Mathf.Min(maxHeal, healthRestore);
+            
             Health += healthRestore;
 
             // UI manager to create healing text 
-            CharacterEvents.characterHealed(gameObject, healthRestore);
+            CharacterEvents.characterHealed.Invoke(gameObject, healthRestore);
 
         }
+        Debug.Log(healthRestore);
     }
 }

@@ -31,10 +31,11 @@ public class HealthPickup : MonoBehaviour
 
         if (damageable.Health < 100)
         {
+            damageable.Heal(healthRestore);
+
             if(healthPickUpSource)
                 AudioSource.PlayClipAtPoint(healthPickUpSource.clip, gameObject.transform.position, healthPickUpSource.volume);
             // after picking up cookie, it will be removed from game
-
             Destroy(gameObject);
         } else
         {
