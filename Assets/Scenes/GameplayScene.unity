@@ -16466,10 +16466,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6402749533299717411, guid: efbe7279772b740439044fb8281d11b6, type: 3}
-      propertyPath: fullHealthTextPrefab
-      value: 
-      objectReference: {fileID: 1559915571677121384, guid: 9c7dd6c3032704ad2aa1299b9df84376, type: 3}
     - target: {fileID: 6512028946177241137, guid: efbe7279772b740439044fb8281d11b6, type: 3}
       propertyPath: m_Name
       value: UIManager
