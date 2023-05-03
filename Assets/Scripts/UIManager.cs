@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -71,5 +72,15 @@ public class UIManager : MonoBehaviour
         // this gives copy of game object 
         TMP_Text tmpText = Instantiate(fullHealthTextPrefab, spawnPosition, Quaternion.identity, gameCanvas.transform)
             .GetComponent<TMP_Text>();
+    }
+
+
+    public void OnExitGame(InputAction.CallbackContext context)
+    {
+        #if (context.started)
+        {
+
+        }
+        #endif
     }
 }
