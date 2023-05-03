@@ -8,9 +8,9 @@ public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
 
-    public UnityEvent<int, int> healthChanged;
 
     Animator animator;
+
     [SerializeField]
     private int _maxHealth = 100;
     public int MaxHealth
@@ -37,7 +37,7 @@ public class Damageable : MonoBehaviour
         } set
         {
             _health = value;
-            healthChanged.Invoke(_health, MaxHealth);
+           
 
             // If health drops below 0, character is no longer alive
             if(_health <= 0)
@@ -89,8 +89,8 @@ public class Damageable : MonoBehaviour
     public void Awake()
     {
         animator = GetComponent<Animator>();
-
     }
+
 
     private void Update()
     {
@@ -115,13 +115,14 @@ public class Damageable : MonoBehaviour
         {
             Health -= damage;
             isInvincible = true;
+            
 
             // Notify other subscribed components that the damageable was hit to handle the knockback, etc..
             animator.SetTrigger("hit");
             LockVelocity = true;
             damageableHit.Invoke(damage, knockBack);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
-
+         
             return true; 
         }
 
