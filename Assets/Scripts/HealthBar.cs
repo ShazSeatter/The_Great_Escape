@@ -22,7 +22,8 @@ public class HealthBar : MonoBehaviour
         }
         playerDamageable = player.GetComponent<Damageable>();
     }
-    private void Start()
+
+    void Start()
     {
    
         slider.value = CalculateSliderPercentage(playerDamageable.Health, playerDamageable.MaxHealth);
