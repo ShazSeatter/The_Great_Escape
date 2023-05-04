@@ -9,4 +9,11 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit");
+        // doesnt work in editor settings only in build mode
+        Application.Quit();
+    }
 }
