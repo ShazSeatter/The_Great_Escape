@@ -17435,6 +17435,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4090495593216537295, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
+      propertyPath: gameOverUI
+      value: 
+      objectReference: {fileID: 1909278042}
     - target: {fileID: 4722136875749644140, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
       propertyPath: m_RootOrder
       value: 3

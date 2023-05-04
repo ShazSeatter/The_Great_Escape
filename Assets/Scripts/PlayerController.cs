@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     Damageable damageable;
     HealthBar healthBar;
 
-    public GameManager gameManager;
+    GameManager gameManager;
+
+    public GameObject gameOverUI;
 
     public float CurrentMoveSpeed
     {
@@ -132,6 +134,7 @@ public class PlayerController : MonoBehaviour
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
         healthBar = GetComponent<HealthBar>();
+        gameManager = GetComponent<GameManager>();
     }
 
     // Start is called before the first frame update
@@ -229,8 +232,7 @@ public class PlayerController : MonoBehaviour
         {
             damageable.IsAlive = false;
             damageable.Health = 0;
-            gameManager.gameOver();
-
+            gameOverUI.SetActive(true);
         }
     }
 }
