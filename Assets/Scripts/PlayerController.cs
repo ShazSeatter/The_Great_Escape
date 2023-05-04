@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     Damageable damageable;
     HealthBar healthBar;
 
-    GameManager gameManager; 
+    GameManager gameManager;
 
     public GameObject gameOverUI;
 
@@ -137,6 +137,8 @@ public class PlayerController : MonoBehaviour
         gameManager = GetComponent<GameManager>();
     }
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -203,7 +205,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        // TODO check if alive as well
+       
         if (context.started && touchingDirections.IsGrounded && CanMove)
         {
             animator.SetTrigger("jump");
@@ -235,6 +237,14 @@ public class PlayerController : MonoBehaviour
             gameOverUI.SetActive(true);
 
         }
+    }
+
+    public void IsDead()
+    {
+    
+            //gameManager.gameOver();
+            gameOverUI.SetActive(true);
+
     }
 }
 

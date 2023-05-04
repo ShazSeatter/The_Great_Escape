@@ -13,7 +13,9 @@ public class Damageable : MonoBehaviour
 
     HealthBar healthBar;
 
-    public GameManager gameManager;
+    PlayerController playerHealth;
+
+    GameManager gameManager;
 
     [SerializeField]
     public int _maxHealth = 100;
@@ -96,10 +98,13 @@ public class Damageable : MonoBehaviour
     public void Awake()
     {
         animator = GetComponent<Animator>();
-        
+        //playerHealth = GetComponent<PlayerController>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerController>();
+
     }
 
- 
+
 
     private void Update()
     {
@@ -125,21 +130,20 @@ public class Damageable : MonoBehaviour
 
             TakeDamage(damage);
             isInvincible = true;
-            
+
+ 
             // Notify other subscribed components that the damageable was hit to handle the knockback, etc..
             animator.SetTrigger("hit");
             LockVelocity = true;
             damageableHit.Invoke(damage, knockBack);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
-         
+  
             return true;
         }
-        
-        return false;
-        
 
         // Unable to be hit 
-        
+        return false;
+  
     }
 
     public void Heal(int healthRestore)
@@ -161,10 +165,11 @@ public class Damageable : MonoBehaviour
     {
         Health -= damage;
 
-        if (!IsAlive)
+        if (playerHealth.IsAlive == false )
         {
-            gameManager.gameOver();
+            playerHealth.IsDead();
         }
     }
+
 
 }
