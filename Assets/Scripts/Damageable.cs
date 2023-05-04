@@ -13,6 +13,7 @@ public class Damageable : MonoBehaviour
 
     HealthBar healthBar;
 
+    public GameManager gameManager;
 
     [SerializeField]
     public int _maxHealth = 100;
@@ -95,13 +96,10 @@ public class Damageable : MonoBehaviour
     public void Awake()
     {
         animator = GetComponent<Animator>();
-        //healthBar = GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>();
+        
     }
 
-    //private void Start()
-    //{
-    //    healthBar.SetInitialHealth(_maxHealth);
-    //}
+ 
 
     private void Update()
     {
@@ -124,22 +122,24 @@ public class Damageable : MonoBehaviour
     {
         if(IsAlive && !isInvincible)
         {
+
             TakeDamage(damage);
-            
             isInvincible = true;
             
-
             // Notify other subscribed components that the damageable was hit to handle the knockback, etc..
             animator.SetTrigger("hit");
             LockVelocity = true;
             damageableHit.Invoke(damage, knockBack);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
          
-            return true; 
+            return true;
         }
+        
+        return false;
+        
 
         // Unable to be hit 
-        return false; 
+        
     }
 
     public void Heal(int healthRestore)
@@ -148,7 +148,7 @@ public class Damageable : MonoBehaviour
         if(IsAlive)
         {
 
-            IncreaseHealth(healthRestore);
+            Health += healthRestore;
 
             // UI manager to create healing text 
             CharacterEvents.characterHealed.Invoke(gameObject, healthRestore);
@@ -160,14 +160,11 @@ public class Damageable : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        //Debug.Log("TakeDamage");
-        //healthBar.UpdateHealth(_health);
-        // update healthbar ui here???
 
+        if (!IsAlive)
+        {
+            gameManager.gameOver();
+        }
     }
 
-    public void IncreaseHealth(int healthRestore)
-    {
-        Health += healthRestore;
-    }
 }

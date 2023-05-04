@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
     Vector2 moveInput;
     TouchingDirections touchingDirections;
     Damageable damageable;
+    HealthBar healthBar;
 
-
-
+    public GameManager gameManager;
 
     public float CurrentMoveSpeed
     {
@@ -131,6 +131,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
         damageable = GetComponent<Damageable>();
+        healthBar = GetComponent<HealthBar>();
     }
 
     // Start is called before the first frame update
@@ -227,6 +228,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             damageable.IsAlive = false;
+            damageable.Health = 0;
+            gameManager.gameOver();
+
         }
     }
 }

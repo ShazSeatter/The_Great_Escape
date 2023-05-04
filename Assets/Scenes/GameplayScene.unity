@@ -11887,6 +11887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c059e135e053f4578906ed936d51df99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 1909278042}
 --- !u!4 &961315363
 Transform:
   m_ObjectHideFlags: 0
@@ -16744,6 +16745,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   followTarget: {fileID: 1626569808}
+--- !u!1 &1909278042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4628616317979815234, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+  m_PrefabInstance: {fileID: 1151240960075514280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1974649609
 GameObject:
   m_ObjectHideFlags: 0
@@ -17489,6 +17495,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5985366547867925141, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 961315362}
     - target: {fileID: 7276461808262502241, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
       propertyPath: m_Size.y
       value: 1.4379017

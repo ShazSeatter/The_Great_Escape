@@ -18,13 +18,6 @@ public class Spider : MonoBehaviour
     TouchingDirections touchingDirections;
     Animator animator;
 
-    //// SHOOTING 
-    //[SerializeField]
-    //private GameObject webPrefab;
-
-    //[SerializeField]
-    //private Transform spiderHead;
-
 
     // MOVEMENT 
     public enum WalkableDirection {  Right, Left};
