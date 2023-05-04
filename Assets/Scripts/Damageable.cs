@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
-
+    
 
     Animator animator;
 
@@ -37,7 +37,7 @@ public class Damageable : MonoBehaviour
         } set
         {
             _health = value;
-           
+
 
             // If health drops below 0, character is no longer alive
             if(_health <= 0)
@@ -113,7 +113,7 @@ public class Damageable : MonoBehaviour
     {
         if(IsAlive && !isInvincible)
         {
-            Health -= damage;
+            TakeDamage(damage);
             isInvincible = true;
             
 
@@ -135,13 +135,23 @@ public class Damageable : MonoBehaviour
         // when damageable componet gets healed INVOKE event character healed 
         if(IsAlive)
         {
-            
-            Health += healthRestore;
+
+            IncreaseHealth(healthRestore);
 
             // UI manager to create healing text 
             CharacterEvents.characterHealed.Invoke(gameObject, healthRestore);
 
         }
         Debug.Log(healthRestore);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+    }
+
+    public void IncreaseHealth(int healthRestore)
+    {
+        Health += healthRestore;
     }
 }
