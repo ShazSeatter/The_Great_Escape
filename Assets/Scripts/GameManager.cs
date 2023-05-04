@@ -29,10 +29,18 @@ public class GameManager : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("Restart");
     }
 
     public void mainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Debug.Log("MainMenu");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
+        Debug.Log("Quit");
     }
 }
