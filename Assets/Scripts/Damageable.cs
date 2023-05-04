@@ -7,26 +7,30 @@ using UnityEngine.Events;
 public class Damageable : MonoBehaviour
 {
     public UnityEvent<int, Vector2> damageableHit;
-    
+    public UnityEvent<int, int> healthChanged;
 
     Animator animator;
 
+    HealthBar healthBar;
+
+
     [SerializeField]
-    private int _maxHealth = 100;
+    public int _maxHealth = 100;
     public int MaxHealth
     {
         get
         {
-            return MaxHealth;
+            return _maxHealth;
         } set
         {
             _maxHealth = value;
+  
         }
 
             }
 
     [SerializeField]
-    private int _health = 100;
+    public int _health = 100;
 
 
     public int Health
@@ -34,10 +38,12 @@ public class Damageable : MonoBehaviour
         get
         {
             return _health;
+
         } set
         {
+            //Debug.Log(value);
             _health = value;
-
+            healthChanged?.Invoke(_health, MaxHealth);
 
             // If health drops below 0, character is no longer alive
             if(_health <= 0)
@@ -89,8 +95,13 @@ public class Damageable : MonoBehaviour
     public void Awake()
     {
         animator = GetComponent<Animator>();
+        //healthBar = GameObject.FindGameObjectWithTag("Health").GetComponent<HealthBar>();
     }
 
+    //private void Start()
+    //{
+    //    healthBar.SetInitialHealth(_maxHealth);
+    //}
 
     private void Update()
     {
@@ -114,6 +125,7 @@ public class Damageable : MonoBehaviour
         if(IsAlive && !isInvincible)
         {
             TakeDamage(damage);
+            
             isInvincible = true;
             
 
@@ -148,6 +160,10 @@ public class Damageable : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
+        //Debug.Log("TakeDamage");
+        //healthBar.UpdateHealth(_health);
+        // update healthbar ui here???
+
     }
 
     public void IncreaseHealth(int healthRestore)

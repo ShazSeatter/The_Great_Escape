@@ -17022,6 +17022,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1152229638437927050, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_Value
+      value: 0.517
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152229638437927050, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1835271651981835059, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
       propertyPath: m_Value
       value: 100
@@ -17037,6 +17045,14 @@ PrefabInstance:
     - target: {fileID: 2942574584219625796, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
       propertyPath: m_Name
       value: Border
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153087567877594154, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3153087567877594154, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3171621900085813522, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
       propertyPath: m_AnchorMax.x
