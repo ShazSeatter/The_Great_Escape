@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     Damageable damageable;
     HealthBar healthBar;
 
-    GameManager gameManager;
+    GameManager gameManager; 
 
     public GameObject gameOverUI;
 
@@ -233,6 +233,7 @@ public class PlayerController : MonoBehaviour
             damageable.IsAlive = false;
             damageable.Health = 0;
             gameOverUI.SetActive(true);
+
         }
     }
 }

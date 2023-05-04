@@ -17009,6 +17009,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 462917451479938214, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 462917451479938214, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 462917451479938214, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 961315362}
+    - target: {fileID: 462917451479938214, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 462917451479938214, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: restart
+      objectReference: {fileID: 0}
+    - target: {fileID: 462917451479938214, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 462917451479938214, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 792826663600373812, guid: 5e5697818723b40c7ae5c569d9989b2e, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 20.7
@@ -17439,6 +17467,10 @@ PrefabInstance:
       propertyPath: gameOverUI
       value: 
       objectReference: {fileID: 1909278042}
+    - target: {fileID: 4090495593216537295, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 961315362}
     - target: {fileID: 4722136875749644140, guid: 58fbc9bce56f943e6b80f4bf4a266c38, type: 3}
       propertyPath: m_RootOrder
       value: 3
