@@ -28,13 +28,20 @@ namespace DialogueSystem
         [SerializeField]
         private AudioClip sound;
 
+        [Header("Character Image")]
+        [SerializeField]
+        private Sprite characterSprite;
+        [SerializeField]
+        private Image imageHolder;
 
         private void Awake()
         {
             textHolder = GetComponent<TMP_Text>();
-            //textColor = textHolder.color;
+            textHolder.text = "";
 
             StartCoroutine(WriteText(input, textHolder, textColor, delay, sound));
+            imageHolder.sprite = characterSprite;
+            imageHolder.preserveAspect = true;
         }
     }
 }
