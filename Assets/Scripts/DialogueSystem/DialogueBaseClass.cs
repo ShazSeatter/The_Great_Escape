@@ -21,14 +21,17 @@ namespace DialogueSystem
         // protected to make it accessible from child class (dialogue line)
         // using Text from the UI components
 
-        protected IEnumerator WriteText(string input, TMP_Text textHolder)
+        protected IEnumerator WriteText(string input, TMP_Text textHolder, Color textColor, float delay, AudioClip sound)
         {
+            textHolder.color = textColor;
 
             for(int i=0; i<input.Length; i++)
             {
                 textHolder.text += input[i];
-                // wait for seconds build in function 
-                yield return new WaitForSeconds(0.1f);
+                //play letter sound
+                SoundManager.Instance.PlaySound(sound);
+                // wait for seconds built in function 
+                yield return new WaitForSeconds(delay);
             }
         }
     }
