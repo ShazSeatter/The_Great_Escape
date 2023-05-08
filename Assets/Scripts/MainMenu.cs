@@ -8,6 +8,12 @@ public class MainMenu : MonoBehaviour
 {
     //public AudioMixer audioMixer;
 
+
+    void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -24,4 +30,6 @@ public class MainMenu : MonoBehaviour
     //{
     //    audioMixer.SetFloat("volume", volume);
     //}
+
+
 }

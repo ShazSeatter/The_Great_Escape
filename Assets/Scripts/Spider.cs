@@ -164,19 +164,5 @@ public class Spider : MonoBehaviour
             FlipDirection();
         }
     }
-    //public void StopAttack()
-    //{
-    //    animator.SetBool("attack", false);
-    //}
-
-    //public void Shoot()
-    //{
-    //    // this instantiates the web into the game
-    //    GameObject go = Instantiate(webPrefab, spiderHead.position, Quaternion.identity);
-    //    Vector3 direction = new Vector3(transform.localScale.x, 0);
-
-    //    go.GetComponent<Projectile>().Setup(direction);
-
-    //}
 
 }
