@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 namespace DialogueSystem
 {
@@ -11,11 +13,13 @@ namespace DialogueSystem
         [SerializeField]
         private string input;
 
-        private Text textHolder;
+        public TMP_Text textHolder;
+
+       
 
         private void Awake()
         {
-            textHolder = GetComponent<Text>();
+            textHolder = GetComponent<TMP_Text>();
 
             StartCoroutine(WriteText(input, textHolder));
         }
