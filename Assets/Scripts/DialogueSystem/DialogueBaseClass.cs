@@ -34,8 +34,8 @@ namespace DialogueSystem
                 // wait for seconds built in function 
                 yield return new WaitForSeconds(delay);
             }
-            //yield return new WaitForSeconds(delayBetweenLines);
-            yield return new WaitUntil(() => Input.GetKey(KeyCode.RightArrow));
+            yield return new WaitForSeconds(delayBetweenLines);
+            //yield return new WaitUntil(() => Input.GetKey(KeyCode.RightArrow));
             Finished = true;
         }
     }
