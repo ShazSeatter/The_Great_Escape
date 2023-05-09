@@ -8,12 +8,10 @@ public class FinishLine : MonoBehaviour
 {
     public List<GameObject> enemies;
 
-    //EnemyManager enemyManager;
 
     private void Start()
     {
         Cursor.visible = true;
-        //enemyManager = GetComponent<EnemyManager>();
         //enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
     }
 
@@ -22,6 +20,7 @@ public class FinishLine : MonoBehaviour
         // if the thing that collided with this trigger has a tag of player then....
         if(collision.CompareTag("Player"))
         {
+            // if after conditional, this returns array with objects with tag, then next conditional will not run
             enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 
             if (enemies.Count == 0)

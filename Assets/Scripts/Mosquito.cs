@@ -24,7 +24,7 @@ public class Mosquito : MonoBehaviour
 
     // setting the inital value
     public bool _hasTarget = false;
-    
+
 
     public bool HasTarget
     {
@@ -151,4 +151,5 @@ public class Mosquito : MonoBehaviour
             }
         }
     }
+
 }

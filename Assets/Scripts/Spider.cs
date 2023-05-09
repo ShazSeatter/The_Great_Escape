@@ -168,4 +168,14 @@ public class Spider : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Trap"))
+        {
+            damageable.IsAlive = false;
+            damageable.Health = 0;
+        }
+
+    }
+
 }
