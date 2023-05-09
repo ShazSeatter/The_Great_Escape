@@ -14,6 +14,7 @@ namespace DialogueSystem
 
         public bool Finished { get; private set; }
 
+        // INFO
         // IEnumerator is used to fetch the current element from a collection.
         // input will take some text " " in the textHolder and use a loop to take each letter
         // from the input String and put it in textholder, wait current amt of time and move on to
@@ -21,7 +22,7 @@ namespace DialogueSystem
 
         // protected to make it accessible from child class (dialogue line)
         // using Text from the UI components
-
+        // END OF INFO
         protected IEnumerator WriteText(string input, TMP_Text textHolder, Color textColor, float delay, AudioClip sound, float delayBetweenLines)
         {
             textHolder.color = textColor;

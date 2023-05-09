@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 9066290954600318663}
   m_Layer: 8
   m_Name: SpiderEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,6 +376,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageableHit:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChanged:
     m_PersistentCalls:
       m_Calls: []
   _maxHealth: 100

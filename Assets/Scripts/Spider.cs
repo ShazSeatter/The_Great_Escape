@@ -11,12 +11,15 @@ public class Spider : MonoBehaviour
     public DetectionZone attackZone;
     public DetectionZone cliffDetectionZone;
 
+    
+
     Damageable damageable;
 
     Rigidbody2D rb;
 
     TouchingDirections touchingDirections;
     Animator animator;
+
 
 
     // MOVEMENT 
@@ -108,6 +111,7 @@ public class Spider : MonoBehaviour
     private void Start()
     {
         WalkDirection = WalkableDirection.Right;
+
     }
 
     // fixed update is for physics functions
