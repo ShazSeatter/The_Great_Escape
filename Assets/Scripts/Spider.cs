@@ -107,7 +107,6 @@ public class Spider : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Start method called");
         WalkDirection = WalkableDirection.Right;
     }
 

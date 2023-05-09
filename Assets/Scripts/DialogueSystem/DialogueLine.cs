@@ -23,6 +23,8 @@ namespace DialogueSystem
         [Header("Time parameters")]
         [SerializeField]
         private float delay;
+        [SerializeField]
+        private float delayBetweenLines;
 
         [Header("Sound")]
         [SerializeField]
@@ -39,9 +41,14 @@ namespace DialogueSystem
             textHolder = GetComponent<TMP_Text>();
             textHolder.text = "";
 
-            StartCoroutine(WriteText(input, textHolder, textColor, delay, sound));
             imageHolder.sprite = characterSprite;
             imageHolder.preserveAspect = true;
+        }
+
+        private void Start()
+        {
+            StartCoroutine(WriteText(input, textHolder, textColor, delay, sound, delayBetweenLines));
+            //GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().enabled = false;
         }
     }
 }

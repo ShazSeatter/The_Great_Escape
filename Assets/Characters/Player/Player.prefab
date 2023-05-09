@@ -473,6 +473,7 @@ MonoBehaviour:
   jumpImpulse: 5
   airWalkSpeed: 5
   gameOverUI: {fileID: 0}
+  dialogueUI: {fileID: 0}
   _isMoving: 0
   _isRunning: 0
   _isFacingRight: 1

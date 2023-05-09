@@ -12,7 +12,8 @@ namespace DialogueSystem
     public class DialogueBaseClass : MonoBehaviour
     {
 
-   
+        public bool Finished { get; private set; }
+
         // IEnumerator is used to fetch the current element from a collection.
         // input will take some text " " in the textHolder and use a loop to take each letter
         // from the input String and put it in textholder, wait current amt of time and move on to
@@ -21,7 +22,7 @@ namespace DialogueSystem
         // protected to make it accessible from child class (dialogue line)
         // using Text from the UI components
 
-        protected IEnumerator WriteText(string input, TMP_Text textHolder, Color textColor, float delay, AudioClip sound)
+        protected IEnumerator WriteText(string input, TMP_Text textHolder, Color textColor, float delay, AudioClip sound, float delayBetweenLines)
         {
             textHolder.color = textColor;
 
@@ -33,6 +34,9 @@ namespace DialogueSystem
                 // wait for seconds built in function 
                 yield return new WaitForSeconds(delay);
             }
+            //yield return new WaitForSeconds(delayBetweenLines);
+            yield return new WaitUntil(() => Input.GetKey(KeyCode.RightArrow));
+            Finished = true;
         }
     }
         

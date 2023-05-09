@@ -22,7 +22,11 @@ public class PlayerController : MonoBehaviour
 
     GameManager gameManager;
 
+    //DialogueManager dialogueManager;
+
     public GameObject gameOverUI;
+
+    //public GameObject dialogueUI;
 
     public float CurrentMoveSpeed
     {
@@ -127,6 +131,8 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
+    BoxCollider2D dialogueToggle;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -135,21 +141,10 @@ public class PlayerController : MonoBehaviour
         damageable = GetComponent<Damageable>();
         healthBar = GetComponent<HealthBar>();
         gameManager = GetComponent<GameManager>();
+        GameObject dialogueTrigger = GameObject.FindGameObjectWithTag("Dialogue");
+        dialogueToggle = dialogueTrigger.GetComponent<BoxCollider2D>();
     }
 
-   
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void FixedUpdate()
     {
@@ -210,7 +205,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
-            }
+        }
 
     }
 
@@ -241,10 +236,21 @@ public class PlayerController : MonoBehaviour
 
     public void IsDead()
     {
-    
             //gameManager.gameOver();
             gameOverUI.SetActive(true);
 
     }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Dialogue"))
+        {
+            Debug.Log("Player has triggered");
+            collision.gameObject.GetComponent<DialogueManager>().StartDialogue();
+            dialogueToggle.enabled = false;
+        }
+
+        
+    } 
 }
 
