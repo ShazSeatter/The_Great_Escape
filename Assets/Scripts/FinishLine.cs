@@ -18,16 +18,28 @@ public class FinishLine : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // if the thing that collided with this trigger has a tag of player then....
-        if(collision.CompareTag("Player"))
+        //if(collision.CompareTag("Player"))
+        //{
+        //    // if after conditional, this returns array with objects with tag, then next conditional will not run
+        //    enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+
+        //    if (enemies.Count == 0)
+        //    {
+        //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //    }
+
+        //}
+        if (collision.CompareTag("Player"))
         {
             // if after conditional, this returns array with objects with tag, then next conditional will not run
             enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
 
-            if (enemies.Count == 0)
+            while (enemies.Count != 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
             }
-                
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
