@@ -165,7 +165,7 @@ public class Damageable : MonoBehaviour
     {
         Health -= damage;
 
-        Debug.Log(GameObject.FindGameObjectsWithTag("Enemy")[0].name);
+        //Debug.Log(GameObject.FindGameObjectsWithTag("Enemy")[0].name);
 
         if (playerHealth.IsAlive == false )
         {
