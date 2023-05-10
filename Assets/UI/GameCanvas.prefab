@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6489e6b5592674da3966b10eb521a488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: theres a sign over there! that should tell me where I am!
+  input: Mhm, this sign should tell me where I am
   textColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   delay: 0.06
   delayBetweenLines: 1
@@ -931,7 +931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6489e6b5592674da3966b10eb521a488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: JAVASCRIPT JUNGLE - Bug warning, enter at your own risk...
+  input: JAVASCRIPT JUNGLE - Extreme bug warning, enter at your own risk...
   textColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   delay: 0.05
   delayBetweenLines: 1
@@ -1466,7 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6489e6b5592674da3966b10eb521a488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: Javascript jungle....am I in a world of programing languages???
+  input: Javascript jungle! I'm in a world of programing languages???
   textColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   delay: 0.06
   delayBetweenLines: 1
@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6489e6b5592674da3966b10eb521a488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: the last thing I remember was....sitting at my computer
+  input: Last thing I remember was....sitting at my computer
   textColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   delay: 0.06
   delayBetweenLines: 1
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6489e6b5592674da3966b10eb521a488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: what... where... am... I...
+  input: What... where... am... I...
   textColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   delay: 0.06
   delayBetweenLines: 1
@@ -2550,7 +2550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6489e6b5592674da3966b10eb521a488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: I need to defeat all the bugs and get back home!
+  input: All the bugs need to be defeated to find my way back home!
   textColor: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   delay: 0.06
   delayBetweenLines: 1
