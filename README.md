@@ -36,7 +36,7 @@ For the final 2 weeks of CodeClan's professional software development course, we
 https://play.unity.com/mg/other/webgl-builds-344119
 
 
-### Screenshots of game 
+# Screenshots of game 
 
 <b>Main Menu</b>
 </br>
@@ -57,17 +57,30 @@ https://play.unity.com/mg/other/webgl-builds-344119
 
 ## Asset pack recognition
 
+<p>Thank you to all the artists who took time to create all these pixel art assests </p>
+
 [Jungle Pack](https://jesse-m.itch.io/jungle-pack)
 
-https://jesse-m.itch.io/jungle-pack
-https://fliflifly.itch.io/hearts-and-health-bar
-https://henrysoftware.itch.io/pixel-food
-https://spidey-peanut.itch.io/pixeltreepack
-https://aamatniekss.itch.io/free-pixelart-platformer-tileset
-https://exhitt.itch.io/trap-minipack
-https://jessagrommet.itch.io/adventurers-supply-music-pack
-https://free-game-assets.itch.io/pixel-art-fantasy-monster-sprites
-https://assetstore.unity.com/packages/2d/textures-materials/building/sunnyland-house-props-expansion-pack-237700
+[Health Hearts](https://fliflifly.itch.io/hearts-and-health-bar)
 
+[Pixel Food](https://henrysoftware.itch.io/pixel-food)
 
+[Pixel Tree Pack](https://spidey-peanut.itch.io/pixeltreepack)
 
+[Pixel Environment Tileset](https://aamatniekss.itch.io/free-pixelart-platformer-tileset)
+
+[Traps](https://exhitt.itch.io/trap-minipack)
+
+[Music](https://jessagrommet.itch.io/adventurers-supply-music-pack)
+
+[Monsters](https://free-game-assets.itch.io/pixel-art-fantasy-monster-sprites)
+
+[House](https://assetstore.unity.com/packages/2d/textures-materials/building/sunnyland-house-props-expansion-pack-237700)
+
+[Character](https://rvros.itch.io/animated-pixel-hero)
+
+[Fonts](https://managore.itch.io/m5x7)
+
+[SFX](https://leohpaz.itch.io/rpg-essentials-sfx-free)
+
+[Sign Post](https://gx310.itch.io/sign-posts)
